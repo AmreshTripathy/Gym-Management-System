@@ -1,8 +1,10 @@
-package com.example.GymManagementSystem;
+package com.example.GymManagementSystem.Controller;
 
+import com.example.GymManagementSystem.Models.Gym;
+import com.example.GymManagementSystem.Models.Member;
+import com.example.GymManagementSystem.Services.GymService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,7 +36,7 @@ public class GymController {
     public String addMember(@RequestParam int memberId, @RequestParam int trainerId, @RequestParam String location) {
         try {
             gymService.addMember(memberId, trainerId, location);
-            return "A new member with id " + memberId + " is added successfully at " + location + " gym.";
+            return "A new member with id " + memberId + " is added successfully at " + location + " gym with trainer id: " + trainerId + "." ;
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -49,7 +51,7 @@ public class GymController {
     public String addTrainer(@RequestParam Integer trainerId, @RequestParam String location) {
         try {
             gymService.addTrainer(trainerId, location);
-            return "New Trainer with id " + trainerId + " is added successfully to " + location + " gym.";
+            return "Trainer with id " + trainerId + " is added successfully to " + location + " gym.";
         } catch (Exception ex) {
             ex.printStackTrace();
             return ex.getMessage();
@@ -61,8 +63,13 @@ public class GymController {
         return gymService.getAllTrainer();
     }
 
+    @GetMapping("/getGymWithMostNumberOfMembers")
+    public Gym getGymWithMostNumberOfMembers() {
+        return gymService.getGymWithMostNumberOfMembers();
+    }
+
     @GetMapping("/getMemberHaveMaximumTrainer")
-    public int getMemberHaveMaximumTrainer() {
+    public Member getMemberHaveMaximumTrainer() {
         return gymService.getMemberHaveMaximumTrainer();
     }
 

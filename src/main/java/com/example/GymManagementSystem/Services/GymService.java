@@ -1,4 +1,9 @@
-package com.example.GymManagementSystem;
+package com.example.GymManagementSystem.Services;
+
+import com.example.GymManagementSystem.Models.Member;
+import com.example.GymManagementSystem.Models.Gym;
+import com.example.GymManagementSystem.Repository.GymRepository;
+import com.example.GymManagementSystem.Models.Trainer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -146,7 +151,7 @@ public class GymService {
         return ids;
     }
 
-    public int getMemberHaveMaximumTrainer() {
+    public Member getMemberHaveMaximumTrainer() {
         int size = 0;
         Member member = new Member();
 
@@ -157,7 +162,7 @@ public class GymService {
             }
         }
 
-        return member.getMemberId();
+        return member;
     }
 
 
@@ -170,5 +175,20 @@ public class GymService {
         }
 
         return count;
+    }
+
+    public Gym getGymWithMostNumberOfMembers() {
+
+        int count = Integer.MIN_VALUE;
+        Gym gym = null;
+
+        for (Gym tempGym : gymRepository.getGymList()) {
+            if (count < tempGym.getMemberList().size()) {
+                count = tempGym.getMemberList().size();
+                gym = tempGym;
+            }
+        }
+
+        return gym;
     }
 }

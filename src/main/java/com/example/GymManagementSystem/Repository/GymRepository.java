@@ -1,4 +1,8 @@
-package com.example.GymManagementSystem;
+package com.example.GymManagementSystem.Repository;
+
+import com.example.GymManagementSystem.Models.Member;
+import com.example.GymManagementSystem.Models.Gym;
+import com.example.GymManagementSystem.Models.Trainer;
 
 import java.util.ArrayList;
 import java.util.List;
