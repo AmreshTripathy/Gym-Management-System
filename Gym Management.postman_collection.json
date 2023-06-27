@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "02dde81b-13b8-4fa2-8b3a-5f07bf96470f",
+		"name": "Gym Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27640926"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gymId\" : 6,\r\n    \"location\" : \"blr\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/addGym",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addGym"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/getAllGym",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getAllGym",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getAllGym"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/addTrainer?trainerId=101&location=Jharsuguda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/addTrainer?trainerId=3&location=Kuchinda",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addTrainer"
+					],
+					"query": [
+						{
+							"key": "trainerId",
+							"value": "3"
+						},
+						{
+							"key": "location",
+							"value": "Kuchinda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/getAllTrainer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getAllTrainer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getAllTrainer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/addMember&memberId=1&trainerId=101&location=kuchinda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/addMember?memberId=9&trainerId=105&location=Jharsuguda",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addMember"
+					],
+					"query": [
+						{
+							"key": "memberId",
+							"value": "9"
+						},
+						{
+							"key": "trainerId",
+							"value": "105"
+						},
+						{
+							"key": "location",
+							"value": "Jharsuguda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/getAllMember",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getAllMember",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getAllMember"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/getGymWithMostNumberOfMembers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getGymWithMostNumberOfMembers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getGymWithMostNumberOfMembers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/getMemberHaveMaximumTrainer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getMemberHaveMaximumTrainer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getMemberHaveMaximumTrainer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/getTrainersWithGymMoreThan5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getTrainersWithGymMoreThan5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getTrainersWithGymMoreThan5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
